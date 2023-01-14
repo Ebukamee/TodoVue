@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+/*Light Thems*/
+--Gray: hsl(0, 0%, 98%);
+--Blue: hsl(236, 33%, 92%);
+--Blue1: hsl(233, 11%, 84%);
+--Blue2: hsl(236, 9%, 61%);
+--Blue3: hsl(235, 19%, 35%);
+--Bpic:linear-gradient( hsl(233, 14%, 35%),hsl(237, 14%, 26%));
+/*Dark Thems*/
+--Blue4: hsl(235, 21%, 11%);
+--Blue5: hsl(235, 24%, 19%);
+--Blue6: hsl(234, 39%, 85%);
+--Blue-h: hsl(236, 33%, 92%);
+--Blue7: hsl(234, 11%, 52%);
+--Blue8: hsl(233, 14%, 35%);
+--Blue9: hsl(237, 14%, 26%);
+
+}
+header {
+  width: 100%;
+  background-image: url('bg-desktop-light.jpg');
+  height: 200px;
+  box-sizing: border-box;
+  padding-top: 40px;
+}
+header div{
+  width: 90%;
+  max-width: 500px;
+  margin:5px auto;
+}
+* {
+  margin: 0;
+  color: var(--Blue3);
+  font-family: 'Josefn Sans',sans-serif;
+}
+#toggle {
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin: 6px;
+}
+h1 {
+    /* margin: 5px; */
+    font-weight: 500;
+    color: white;
+    display: inline-block;
+    font-family: 'Josefn Sans',sans-serif;
+  }
+  h3 {
+    text-align:center;
+    font-weight:300
+  }
+  .main{
+  background-color:var(--Gray);
+  box-shadow:0 0.5px 10px 0 var(--Blue2) ,0 7px 21px 0 var(--Blue2);
+  color:white;
+  padding-top: 5px;
+  max-width:500px;
+  width: 90%;
+  margin:auto;
+  height:400px;
+  max-height:600px;
+  border-radius:5px;
+  box-sizing:border-box;
+  position: relative;
+  bottom: 40px;
+  }
+  button{
+  margin: auto;
+  background-image: var(--Bpic);
+  border:1px solid var(--Bpic);
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  float: right;
+  color: var(--Gray);
+  }
+  .host {
+    height: 380px;
+  }
+  /* .button {
+    grid-template-rowss: repeat(3,1fr);
+  } */ 
+  #input {
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px 25px;
+    border-image: url('bg-desktop-light.jpg');
+    width: 380px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  #push {
+    margin:20px auto;
+    max-width: 500px;
+    width: 90%;
+  }
+  #todo {
+    height: 20px;
+    font-weight: 700px;
+    font-size:0 18px;
+    border-bottom: 1px solid var(--Blue2);
+    margin:10px 0;
+    padding: 5px 15px 15px 15px;
+  }
+  #radio {
+    width: 18px;
+    border-radius: 50%;
+  }
+  span {
+    margin-left:20px ;
+  }
+  #right {
+    float: right;
+  }
+  /* p {
+    display: inline-block;
+  } */
+  /* hr {
+    width: 100%;
+  } */
+  @media (max-width=400px) {
+    header {
+      background-image: url('bg-mobile-light.jpg');
+    }
+  }

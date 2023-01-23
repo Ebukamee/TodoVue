@@ -1,39 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
+/* Light Themes */
 :root {
-/*Light Thems*/
---Gray: hsl(0, 0%, 98%);
---Blue: hsl(236, 33%, 92%);
---Blue1: hsl(233, 11%, 84%);
---Blue2: hsl(236, 9%, 61%);
---Blue3: hsl(235, 19%, 35%);
---Bpic:linear-gradient( hsl(233, 14%, 35%),hsl(237, 14%, 26%));
+  --Mainground: hsl(0, 0%, 98%);
+  --Background: hsl(0, 0%, 98%);
+  --bgimage: url("bg-desktop-light.jpg");
+  --bgmobile:url('bg-mobile-light.jpg');
+  --Blue: hsl(236, 33%, 92%);
+  --Blue1: hsl(233, 11%, 84%);
+  --Blue2: hsl(233, 11%, 84%);
+  --color: hsl(235, 19%, 35%);
+  --Blue9: hsl(233, 14%, 35%);
+  --Bpic: linear-gradient(hsl(233, 14%, 35%), hsl(237, 14%, 26%));
+  --shadow : 0 0.5px 10px 0 var(--Blue), 0 7px 21px 0 var(--Blue);
+}
 /*Dark Thems*/
---Blue4: hsl(235, 21%, 11%);
---Blue5: hsl(235, 24%, 19%);
---Blue6: hsl(234, 39%, 85%);
---Blue-h: hsl(236, 33%, 92%);
---Blue7: hsl(234, 11%, 52%);
---Blue8: hsl(233, 14%, 35%);
---Blue9: hsl(237, 14%, 26%);
-
+:root.dark-theme {
+  --Mainground: hsl(235, 21%, 11%);
+  --bgimage: url("bg-desktop-dark.jpg");
+  --bgmobile:url('bg-mobile-dark.jpg');
+  --Background: hsl(235, 24%, 19%);
+  --Blue1: hsl(234, 39%, 85%);
+  --color: hsl(236, 33%, 92%);
+  --Blue2: hsl(234, 11%, 52%);
+  --Blue8: hsl(233, 14%, 35%);
+  --Blue9: hsl(237, 14%, 26%);
+  --Bpic: linear-gradient(hsl(233, 11%, 84%), hsl(233, 11%, 84%));
+  --shadow:none;
 }
 header {
   width: 100%;
-  background-image: url('bg-desktop-light.jpg');
+  background-image: var(--bgimage);
   height: 200px;
   box-sizing: border-box;
   padding-top: 40px;
 }
-header div{
+header div {
   width: 90%;
   max-width: 500px;
-  margin:5px auto;
+  margin: 5px auto;
 }
 * {
   margin: 0;
-  color: var(--Blue3);
-  font-family: 'Josefn Sans',sans-serif;
+  color: var(--color);
+  font-family: "Josefn Sans", sans-serif;
+}
+body {
+  background-color: var(--Mainground);
 }
 #toggle {
   float: right;
@@ -42,87 +55,143 @@ header div{
   margin: 6px;
 }
 h1 {
-    /* margin: 5px; */
-    font-weight: 500;
-    color: white;
-    display: inline-block;
-    font-family: 'Josefn Sans',sans-serif;
-  }
-  h3 {
-    text-align:center;
-    font-weight:300
-  }
-  .main{
-  background-color:var(--Gray);
-  box-shadow:0 0.5px 10px 0 var(--Blue2) ,0 7px 21px 0 var(--Blue2);
-  color:white;
+  /* margin: 5px; */
+  font-weight: 500;
+  color: white;
+  display: inline-block;
+  font-family: "Josefn Sans", sans-serif;
+}
+h3 {
+  text-align: center;
+  font-weight: 300;
+}
+.main {
+  background-color: var(--Background);
+  box-shadow: var(--shadow);
+  color: white;
   padding-top: 5px;
-  max-width:500px;
+  max-width: 500px;
   width: 90%;
-  margin:auto;
-  height:400px;
-  max-height:600px;
-  border-radius:5px;
-  box-sizing:border-box;
+  margin: auto;
+  height: 400px;
+  max-height: 600px;
+  border-radius: 5px;
+  box-sizing: border-box;
   position: relative;
   bottom: 40px;
-  }
-  button{
+}
+button {
   margin: auto;
   background-image: var(--Bpic);
-  border:1px solid var(--Bpic);
+  border: 1px solid var(--Bpic);
   border-radius: 5px;
   width: 100px;
   height: 30px;
   float: right;
-  color: var(--Gray);
-  }
-  .host {
-    height: 380px;
-  }
-  /* .button {
+  color: var(--Background);
+}
+#clear {
+  background-image: none;
+  background-color: var(--Background);
+  color: var(--color);
+  border-radius: 0;
+  width: 150px;
+  float: none;
+  display: flex;
+  justify-content: space-around;
+}
+.bottom {
+  position: absolute;
+  top: 365px;
+  width: 100%;
+}
+.host {
+  height: 380px;
+}
+/* .button {
     grid-template-rowss: repeat(3,1fr);
-  } */ 
-  #input {
-    border-radius: 5px;
-    height: 30px;
-    padding: 5px 25px;
-    border-image: url('bg-desktop-light.jpg');
-    width: 380px;
-    outline: none;
-    box-sizing: border-box;
-  }
-  #push {
-    margin:20px auto;
-    max-width: 500px;
-    width: 90%;
-  }
-  #todo {
-    height: 20px;
-    font-weight: 700px;
-    font-size:0 18px;
-    border-bottom: 1px solid var(--Blue2);
-    margin:10px 0;
-    padding: 5px 15px 15px 15px;
-  }
-  #radio {
-    width: 18px;
-    border-radius: 50%;
-  }
-  span {
-    margin-left:20px ;
-  }
-  #right {
-    float: right;
-  }
-  /* p {
+  } */
+#input {
+  border-radius: 5px;
+  background-color: var(--Background);
+  height: 30px;
+  padding: 5px 25px;
+  border-image: var(--bgimage);
+  width: 380px;
+  outline: none;
+  box-sizing: border-box;
+}
+#push {
+  margin: 20px auto;
+  max-width: 500px;
+  width: 90%;
+}
+#todo {
+  height: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  border-bottom: 1px solid var(--Blue2);
+  margin: 10px 0;
+  padding: 5px 15px 15px 15px;
+}
+#radio {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid var(--Blue9);
+  display: inline-block;
+}
+.complete {
+  background-image:var(--bgimage);
+}
+.checked {
+  /* background-image:var(--bgimage); */
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 1px;
+  right: 0.5px;
+}
+span {
+  margin-left: 20px;
+}
+#right {
+  float: right;
+}
+.disable {
+  background-color: silver;
+  background-image: none;
+}
+/* p {
     display: inline-block;
   } */
-  /* hr {
+/* hr {
     width: 100%;
   } */
-  @media (max-width=400px) {
-    header {
-      background-image: url('bg-mobile-light.jpg');
-    }
+.linethrough {
+  text-decoration: line-through;
+}
+/* media queries */
+@media (max-width: 560px) {
+  header {
+    background-image: var(--bgmobile);
   }
+  #input {
+    border-image: var(--bgmobile);
+    width: 100%;
+  }
+  button {
+    /* float:calc(5%); */
+    margin: 5px 25%;
+    width: 50%;
+  }
+  #clear {
+    margin: 5px 25%;
+    width: 50%;
+  }
+  #push {
+    bottom: 15px;
+    position: relative;
+  }
+}

@@ -40,6 +40,10 @@ header div {
   max-width: 500px;
   margin: 5px auto;
 }
+p {
+  font-size: 14px;
+  font-weight: medium;
+}
 * {
   margin: 0;
   color: var(--color);
@@ -95,15 +99,22 @@ button {
   background-color: var(--Background);
   color: var(--color);
   border-radius: 0;
+  margin-right: 0px;
   width: 150px;
-  float: none;
-  display: flex;
-  justify-content: space-around;
 }
 .bottom {
-  position: absolute;
-  top: 365px;
-  width: 100%;
+  position: fixed;
+  background-color: var(--Background);
+  display: flex;
+  /* justify-content: space-between; */
+  /* flex-direction: column; */
+  top: 510px;
+  width: 90%;
+  max-width: 500px;
+}
+.bottom P {
+  margin-left: 10px;
+  text-align: center;
 }
 .host {
   height: 380px;
@@ -127,7 +138,8 @@ button {
   width: 90%;
 }
 #todo {
-  height: 20px;
+  min-height: 20px;
+  height: fit-content;
   font-weight: 400;
   font-size: 18px;
   border-bottom: 1px solid var(--Blue2);
@@ -156,21 +168,23 @@ button {
 span {
   margin-left: 20px;
 }
+.flex {
+  display: grid;
+ grid-template-columns:10% 85% 5%;
+}
 #right {
-  float: right;
+  display: none;
 }
 .disable {
   background-color: silver;
   background-image: none;
 }
-/* p {
-    display: inline-block;
-  } */
-/* hr {
-    width: 100%;
-  } */
+.flex:hover > #right {
+  display: block;
+}
 .linethrough {
   text-decoration: line-through;
+  color: rgb(161, 156, 156);
 }
 /* media queries */
 @media (max-width: 560px) {
@@ -193,5 +207,8 @@ span {
   #push {
     bottom: 15px;
     position: relative;
+  }
+  .bottom {
+    flex-direction: column;
   }
 }

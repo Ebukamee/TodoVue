@@ -43,7 +43,10 @@
       add() {
         if (this.todos.length >= 7) {
           alert("Finish Your Todos First");
-        } 
+        }
+        else if (!this.New) {
+          this.New=""
+        }
         else {
           this.todos.push({
             id: this.todos.length + 1,
@@ -105,14 +108,14 @@
         alt="sun"
         id="toggle"
         @click="toggle"
-        v-if="!!Dark"
+        v-show="Dark===true"
       />
       <img
         src="../assets/icon-moon.svg"
         alt="moon"
         id="toggle"
         @click="toggle"
-        v-else-if="!Dark"
+        v-show="!Dark"
       />
     </div>
     <div id="push">
@@ -131,26 +134,20 @@
   <div class="main">
     <div class="host">
       <div id="todo" v-for="(todo,i) in todos" :key="i" :todo="New">
-        <p>
+        <div class="flex">
           <div id="radio" @click="onComplete(todo)" :class="{'complete':todo.IsCompleted}">
            <img src='../assets/icon-check.svg' alt='check' v-show='todo.IsCompleted' class='checked'/>
           </div>
-          <span id="norm" :class="{'linethrough':todo.IsCompleted}">{{ todo.name }}</span>
+          <p id="norm" :class="{'linethrough':todo.IsCompleted}">{{ todo.name }}</p>
           <img src="../assets/icon-cross.svg" id="right" @click="Ondelete(todo.id)" />
-        </p>
+        </div>
       </div>
       <div class='bottom'>
+        <p>{{ todos.length }} Items Available, {{ todos.filter(todo => !todo.IsCompleted).length }} {{  todos.filter(todo => !todo.IsCompleted).length<=1 ? "Item" : "Items" }} left</p>
         <button @click='onClear(todo)' id='clear'>Clear Completed</button>
       </div>
     </div>
-    <!--input
-        type="text"
-        v-model="New.Title"
-        @keyup.enter="add"
-        placeholder="Enter To-Do"
-      /-->
-    <br /><br />
-    <!--input type="time" v-model="New.Time" @keyup.enter='add' placeholder='Enter time'/-->
+    
   </div>
 </template>
 
